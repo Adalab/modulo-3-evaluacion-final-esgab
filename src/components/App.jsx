@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import logo from "../images/Harry_Potter_wordmark.svg";
 
 import CharacterList from "./CharacterList";
+import Filters from "./Filters";
 
 import "../scss/App.scss";
 
@@ -11,6 +12,10 @@ import { fetchCharacters } from "../services/fetch";
 function App() {
 
   const [data, setData] = useState([]);
+  const [dataFilters, setDataFilters] = useState({
+    name: "",
+    house: "Gryffindor",
+  });
 
   useEffect(() => {
     fetchCharacters().then((responseData) => {
@@ -19,7 +24,21 @@ function App() {
     });
   }, []);
 
-  console.log(data);
+  const handleFilterCharacter = (filter, value) => {
+    setDataFilters({ ...dataFilters, [filter]: value });
+  }
+
+  const filteredCharacters = data
+  .filter((character) =>
+    character.name.toLowerCase().includes(dataFilters.name.toLowerCase())
+  )
+  .filter((character) => {
+    if (dataFilters.house === "All") {
+      return true;
+    } else {
+      return character.house === dataFilters.house;
+    }
+  });
 
   return (
   <div className="container">
@@ -28,10 +47,12 @@ function App() {
     </header>
     <main className="main">
       <section className="main__filters">
-        <Filters />
+        <Filters 
+          handleFilterCharacter={handleFilterCharacter}
+        />
       </section>
       <section className="main__characters">
-        <CharacterList data={data} />
+        <CharacterList data={filteredCharacters} />
       </section>
     </main>
     <footer className="footer">
