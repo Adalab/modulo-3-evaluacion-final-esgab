@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Filters({ handleFilterCharacter, valueName, valueHouse }) {
+function Filters({ handleFilterCharacter, handleClickReset, valueName, valueHouse }) {
 
   const handleInputName = (event) => {
  
@@ -51,7 +51,7 @@ function Filters({ handleFilterCharacter, valueName, valueHouse }) {
           </option>
         </select>
       </fieldset>
-      <button className="filters__reset">Reset</button>
+      <button className="filters__reset" onClick={handleClickReset}>Reset</button>
     </form>
   );
 
@@ -59,6 +59,7 @@ function Filters({ handleFilterCharacter, valueName, valueHouse }) {
 
 Filters.propTypes = {
   handleFilterCharacter: PropTypes.func.isRequired,
+  handleClickReset: PropTypes.func.isRequired,
   valueName: PropTypes.string.isRequired,
   valueHouse: PropTypes.string.isRequired,
 }

@@ -49,6 +49,14 @@ function App() {
     return characterFound;
   };
 
+  const handleClickReset = (event) => {
+    event.preventDefault();
+    setDataFilters({
+      name: "",
+      house: "Gryffindor",
+    });
+  };
+
   return (
   <div className="container">
     <header className="header">
@@ -62,6 +70,7 @@ function App() {
             element={
               <HomePage
                 handleFilterCharacter={handleFilterCharacter}
+                handleClickReset={handleClickReset}
                 valueName={dataFilters.name}
                 valueHouse={dataFilters.house}
                 data={filteredCharacters}
