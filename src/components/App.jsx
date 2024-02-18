@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 import logo from "../images/Harry_Potter_wordmark.svg";
 
-import CharacterList from "./CharacterList";
-import Filters from "./Filters";
+import HomePage from "./HomePage";
 
 import "../scss/App.scss";
 
@@ -46,16 +45,12 @@ function App() {
       <img className="header__logo" src={logo} alt="Logo Harry Potter" />
     </header>
     <main className="main">
-      <section className="main__filters">
-        <Filters 
-          handleFilterCharacter={handleFilterCharacter}
-          valueName={dataFilters.name}
-          valueHouse={dataFilters.house}
-        />
-      </section>
-      <section className="main__characters">
-        <CharacterList data={filteredCharacters} />
-      </section>
+      <HomePage
+        handleFilterCharacter={handleFilterCharacter}
+        valueName={dataFilters.name}
+        valueHouse={dataFilters.house}
+        data={filteredCharacters}
+      />
     </main>
     <footer className="footer">
       <small className="footer__copy"></small>
