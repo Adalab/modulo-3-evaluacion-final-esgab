@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import logo from "../images/Harry_Potter_wordmark.svg";
 
+import CharacterList from "./CharacterList";
+
 import "../scss/App.scss";
 
 import { fetchCharacters } from "../services/fetch";
@@ -55,16 +57,7 @@ function App() {
         </form>
       </section>
       <section className="main__characters">
-        <ul className="character__list">
-          <li className="character__item">
-            <article className="character">
-              <img className="character__image" src="" alt="" />
-              <h3 className="character__name">Nombre</h3>
-              <p className="character__house">Casa</p>
-              <p className="character__species">Especie</p>
-            </article>          
-          </li>
-        </ul>
+        <CharacterList data={data} />
       </section>
     </main>
     <footer className="footer">
