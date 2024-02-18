@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 function CharacterDetail() {
 
   return (
     <div className="detail">
-      <button className="detail__return">&#8656; Volver</button>
+      <Link to={"/"}>
+        <button className="detail__return">&#8656; Volver</button>
+      </Link>
       <div className="detail__character">
         <article className="detail__article characterinfo">
           <div className="characterinfo__image-container">

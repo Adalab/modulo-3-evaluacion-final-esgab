@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import { Link } from "react-router-dom";
+
 import gryffindor from "../images/house-gryffindor.jpg";
 import hufflepuff from "../images/house-hufflepuff.jpg";
 import ravenclaw from "../images/house-ravenclaw.jpg"
@@ -8,7 +10,8 @@ import defaultPhoto from "../images/no-image.jpg";
 
 
 function CharacterCard({ character }) {
-  const { image, name, house, species } = character;
+
+  const { name, house, image, species, ancestry } = character;
 
   const houseShield = {
     Gryffindor: gryffindor,
@@ -18,16 +21,18 @@ function CharacterCard({ character }) {
   };
 
   return (
-    <article className="character">
-      <img
-        className="character__image"
-        src={image || houseShield[house] || defaultPhoto}
-        alt={`Imagen del personaje ${name}`}
-      />
-      <h3 className="character__name">{name}</h3>
-      <p className="character__house">{house}</p>
-      <p className="character__species">{species}</p>
-    </article>
+    <Link to={`/personaje/${name.toLowerCase().replace(" ", "-")}/${ancestry}`}>
+      <article className="character">
+        <img
+          className="character__image"
+          src={image || houseShield[house] || defaultPhoto}
+          alt={`Imagen del personaje ${name}`}
+        />
+        <h3 className="character__name">{name}</h3>
+        <p className="character__house">{house}</p>
+        <p className="character__species">{species}</p>
+      </article>
+    </Link>
   );
 }
 
