@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import translation from "../services/translations";
+
 import gryffindor from "../images/house-gryffindor.jpg";
 import hufflepuff from "../images/house-hufflepuff.jpg";
 import ravenclaw from "../images/house-ravenclaw.jpg";
@@ -44,10 +46,21 @@ function CharacterDetail({ getInfoCharacter }) {
           </div>
           <div className="characterinfo__data">
             <h3 className="characterinfo__name">{characterInfo.name}</h3>
-            <p><bold>Estatus:</bold> {alive}</p>
-            <p><bold>Especie:</bold> {species} <ins>Icono</ins></p>
-            <p><bold>Género:</bold> {gender} <ins>Icono</ins></p>
-            <p><bold>Casa:</bold> {house}</p>
+            <p> 
+              <bold>Estatus: </bold>{(alive && gender === "male" ? "Vivo" : "Muerto") || (alive && gender === "female" ? "Viva" : "Muerta")}
+              <ins>{(alive ? "Icono vivo" : "Icono muerto")}</ins>
+            </p>
+            <p>
+              <bold>Especie: </bold>{translation[species][gender] || translation[species]} 
+              <ins>{(species === "human" ? "Icono humano" : "Icono otra especie")}</ins>
+            </p>
+            <p>
+              <bold>Género: </bold>{translation[gender]} 
+              <ins>{(species === "male" ? "Icono hombre" : "Icono mujer")}</ins>
+            </p>
+            <p>
+              <bold>Casa:</bold> {house}
+            </p>
           </div>
         </article>
       </div>
