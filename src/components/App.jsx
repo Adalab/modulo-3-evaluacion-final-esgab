@@ -21,8 +21,8 @@ function App() {
 
   useEffect(() => {
     fetchCharacters().then((responseData) => {
-      
-      setData(responseData);
+      const sortedData = responseData.sort((a, b) => a.name.localeCompare(b.name));
+      setData(sortedData);
     });
   }, []);
 
