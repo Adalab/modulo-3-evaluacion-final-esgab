@@ -1,8 +1,23 @@
-import "../scss/App.scss";
+import { useState, useEffect } from "react";
 
 import logo from "../images/Harry_Potter_wordmark.svg";
 
+import "../scss/App.scss";
+
+import { fetchCharacters } from "../services/fetch";
+
 function App() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchCharacters().then((responseData) => {
+      
+      setData(responseData);
+    });
+  }, []);
+
+  console.log(data);
 
   return (
   <div className="container">
