@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import MessagePage from "./MessagePage";
+
 import translation from "../services/translations";
 
 import gryffindor from "../images/house-gryffindor.jpg";
@@ -20,6 +22,10 @@ function CharacterDetail({ getInfoCharacter }) {
     params.name.replace("-", " "),
     ancestry
   );
+
+  if (!characterInfo) {
+    return <MessagePage text="No existe ningún personaje con ese nombre y ascendencia." />;
+  }
 
   const { image, alive, species, gender, house } = characterInfo;
 
