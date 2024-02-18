@@ -15,7 +15,10 @@ function HomePage({ handleFilterCharacter, valueName, valueHouse, data }) {
         />
         </section>
         <section className="main__characters">
-          <CharacterList data={data} />
+          <CharacterList 
+            data={data} 
+            valueName={valueName}
+          />
         </section>
     </>
   );

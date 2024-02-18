@@ -1,19 +1,31 @@
 import PropTypes from "prop-types";
 
 import CharacterCard from "./CharacterCard";
+import MessagePage from "./MessagePage";
 
-function CharacterList({ data }) {
+function CharacterList({ data, valueName }) {
 
-  const renderCharacters = 
-    data.map(character => (
-      <li className="character__item" key={character.id}>
-        <CharacterCard character={character} />
-      </li>
-    ));
+  let html;
 
-  return (
-    <ul className="character__list">{renderCharacters}</ul>
-  );
+  if (data && data.length > 0) {
+    html = (
+      <ul className="characters__list">
+        {data.map(character => (
+          <li className="character__item" key={character.id}>
+            <CharacterCard character={character} />
+          </li>
+        ))}
+      </ul>
+    );
+  } 
+
+  else if (valueName){
+    html = <MessagePage text={`No hay ningún personaje que coincida con la palabra ${valueName}`}/>;
+  }
+
+  return html;
+
+
 }
 
 CharacterList.propTypes = {

@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 function Filters({ handleFilterCharacter, valueName, valueHouse }) {
 
   const handleInputName = (event) => {
+ 
     handleFilterCharacter("name", event.currentTarget.value);
   };
 
   const handleInputHouse = (event) => {
+   
     handleFilterCharacter("house", event.currentTarget.value);
   };
 
