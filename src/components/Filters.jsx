@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Filters({ handleFilterCharacter }) {
+function Filters({ handleFilterCharacter, valueName, valueHouse }) {
 
   const handleInputName = (event) => {
     handleFilterCharacter("name", event.currentTarget.value);
@@ -23,12 +23,14 @@ function Filters({ handleFilterCharacter }) {
           id="name"
           placeholder="Ej: Harry Potter"
           onInput={handleInputName}
+          value={valueName}
         />
       </fieldset>
       <fieldset className="filters__houses houses">
         <label htmlFor="houses__label">Selecciona la casa:</label>
         <select name="houses__select"
           onInput={handleInputHouse}
+          value={valueHouse}
         >
           <option className="houses__option" value="All">
             Todas
@@ -55,6 +57,8 @@ function Filters({ handleFilterCharacter }) {
 
 Filters.propTypes = {
   handleFilterCharacter: PropTypes.func.isRequired,
+  valueName: PropTypes.string.isRequired,
+  valueHouse: PropTypes.string.isRequired,
 }
 
 export default Filters;

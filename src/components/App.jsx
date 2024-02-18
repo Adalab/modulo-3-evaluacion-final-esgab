@@ -49,6 +49,8 @@ function App() {
       <section className="main__filters">
         <Filters 
           handleFilterCharacter={handleFilterCharacter}
+          valueName={dataFilters.name}
+          valueHouse={dataFilters.house}
         />
       </section>
       <section className="main__characters">
