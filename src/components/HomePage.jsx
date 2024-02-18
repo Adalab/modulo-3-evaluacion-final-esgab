@@ -3,14 +3,13 @@ import PropTypes from "prop-types";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 
-function HomePage({ handleFilterCharacter, handleClickReset, valueName, valueHouse, data }) {
+function HomePage({ handleFilterCharacter, valueName, valueHouse, data }) {
 
   return (
     <>
       <section className="main__filters">
         <Filters
           handleFilterCharacter={handleFilterCharacter}
-          handleClickReset={handleClickReset}
           valueName={valueName}
           valueouse={valueHouse}
         />
@@ -24,7 +23,6 @@ function HomePage({ handleFilterCharacter, handleClickReset, valueName, valueHou
 
 HomePage.propTypes = {
   handleFilterCharacter: PropTypes.func.isRequired,
-  handleClickReset: PropTypes.func.isRequired,
   valueName: PropTypes.string.isRequired,
   valueHouse: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired,

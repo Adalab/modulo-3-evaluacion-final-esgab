@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { Routes, Route } from 'react-router-dom';
 
 import logo from "../images/Harry_Potter_wordmark.svg";
 
 import HomePage from "./HomePage";
+import MessagePage from "./MessagePage";
 
 import "../scss/App.scss";
 
@@ -45,12 +47,26 @@ function App() {
       <img className="header__logo" src={logo} alt="Logo Harry Potter" />
     </header>
     <main className="main">
-      <HomePage
-        handleFilterCharacter={handleFilterCharacter}
-        valueName={dataFilters.name}
-        valueHouse={dataFilters.house}
-        data={filteredCharacters}
-      />
+      <Routes>
+        <Route
+            exact
+            path="/"
+            element={
+              <HomePage
+                handleFilterCharacter={handleFilterCharacter}
+                valueName={dataFilters.name}
+                valueHouse={dataFilters.house}
+                data={filteredCharacters}
+              />
+            }
+          />
+
+          <Route path="*" element={
+            <MessagePage text="Lo que estás buscando no se ha podido encontrar" />
+            } 
+          />
+
+      </Routes>
     </main>
     <footer className="footer">
       <small className="footer__copy"></small>
