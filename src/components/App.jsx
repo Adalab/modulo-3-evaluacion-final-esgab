@@ -5,6 +5,7 @@ import logo from "../images/Harry_Potter_wordmark.svg";
 
 import HomePage from "./HomePage";
 import MessagePage from "./MessagePage";
+import CharacterDetail from "./CharacterDetail";
 
 import "../scss/App.scss";
 
@@ -41,6 +42,13 @@ function App() {
     }
   });
 
+  const getInfoCharacter = (characterName, characterAncestry) => {
+    const characterFound = data.find(
+      (character) => character.name.toLowerCase() === characterName.toLowerCase() && character.ancestry === characterAncestry
+    );
+    return characterFound;
+  };
+
   return (
   <div className="container">
     <header className="header">
@@ -59,6 +67,15 @@ function App() {
                 data={filteredCharacters}
               />
             }
+          />
+
+          <Route
+            path="/personaje/:name"
+            element={<CharacterDetail getInfoCharacter={getInfoCharacter} />}
+          />
+          <Route
+            path="/personaje/:name/:ancestry"
+            element={<CharacterDetail getInfoCharacter={getInfoCharacter} />}
           />
 
           <Route path="*" element={
