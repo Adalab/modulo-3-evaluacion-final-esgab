@@ -25,6 +25,7 @@
     border: none;
     transition: .5s;
     font-size: 16px;
+    color: $color3;
 
     &:hover {
       opacity: .7;
@@ -36,27 +37,27 @@
   background: transparent;
   padding: 7px 20px;
   border-radius: 10px;
-  color:#10001f;
-  background: #ad92ba;
+  color:$color3;
+  background: $color2;
   border: none;
   font-size: .9em;
 }
 
 ::placeholder {
-  color:#10001f;
-  opacity: 1; /* Firefox */
+  color: $color3;
+  opacity: 1;
 }
 
 .select {
-  padding: 6px 20px;
-  outline:0;
-  box-shadow:none;
-  border:0!important;
-  background: #ad92ba;
+  padding: 7px 20px;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: $color2;
   flex: 1;
   border-radius: 10px;
-  min-width:200px;
-  color:#10001f;
-  cursor:pointer;
+  min-width: 200px;
+  color: $color3;
+  cursor: pointer;
   font-size: .9em;
 }

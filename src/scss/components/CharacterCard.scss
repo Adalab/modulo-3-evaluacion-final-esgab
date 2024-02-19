@@ -11,6 +11,7 @@
     height: 280px;
     object-fit: cover;
   }
+
   &__name {
     margin: .5rem 0;
     font-size: 23px;
@@ -18,11 +19,10 @@
   }
 
   &__house {
-    color: #a89ec9;
+    color: $color2;
     text-decoration: none;
     text-align: center;
     padding-bottom: 5px;
   }
-    
 }
 

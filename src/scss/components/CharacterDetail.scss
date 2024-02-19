@@ -7,8 +7,8 @@
   align-items: center;
 
   &__return {
-    font-family: "Fondamento", cursive;
-    font-size: 25px;
+    font-family: $font;
+    font-size: 27px;
     background: none;
     padding: 0;
     border: none;
@@ -80,8 +80,9 @@
       }
 
       .bold {
-        color: #a89ec9;
+        color: $color2;
       }
+
       &__house {
         margin: 1rem 0;
         font-size: 25px;
@@ -89,17 +90,9 @@
 
       .icon {
         margin-left: .5rem;
-        color: #a89ec9;
+        color: $color2;
       }
-
-      
     }
-
-
-
-
-
-
 
     &__info {
       width: 50%;
@@ -107,10 +100,5 @@
       flex-direction: column;
       justify-content: center;
     }
-
-    h3, p {
-      text-decoration: none;
-    }
   }
-
 }

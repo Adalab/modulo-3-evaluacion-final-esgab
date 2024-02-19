@@ -5,7 +5,7 @@ import FilterHouse from "./FilterHouse";
 import FilterGender from "./FilterGender";
 import FiltersReset from "./FiltersReset";
 
-function Filters({ handleFilterCharacter, handleClickReset, valueName, valueHouse, valueGender}) {
+function Filters({ handleFilterCharacter, handleClickReset, valueName, valueHouse, valueGender }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
