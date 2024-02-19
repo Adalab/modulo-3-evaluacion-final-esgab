@@ -24,7 +24,7 @@ function CharacterDetail({ getInfoCharacter }) {
   );
 
   if (!characterInfo) {
-    return <MessagePage text="No existe ningún personaje con ese nombre y ascendencia." />;
+    return <MessagePage text="El personaje que buscas no existe." />;
   }
 
   const { image, alive, species, gender, house } = characterInfo;

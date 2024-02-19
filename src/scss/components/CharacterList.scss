@@ -3,6 +3,18 @@
   grid-template-columns:1fr 1fr 1fr 1fr;
   align-items: center;
 
+  @media (max-width: 1200px) {
+    grid-template-columns:1fr 1fr 1fr;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns:1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns:1fr;
+  }
+
   .character__item {
     user-select:none;
     width: 300px;

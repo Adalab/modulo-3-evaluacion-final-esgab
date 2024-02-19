@@ -1,10 +1,25 @@
 .filters {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 
+  .check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__name, &__houses {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
   &__reset {
-    padding: 7px 11px;
+    padding: 9px 11px;
     cursor: pointer;
     border-radius: 50%;
     border: none;
@@ -17,11 +32,7 @@
   }
 }
 
-label {
-  padding-right: .5rem;
-}
-
-input {
+.input {
   background: transparent;
   padding: 7px 20px;
   border-radius: 10px;
@@ -31,27 +42,21 @@ input {
   font-size: .9em;
 }
 
-input:focus {
-  border: none;
-}
-
 ::placeholder {
   color:#10001f;
   opacity: 1; /* Firefox */
 }
 
-select {
-  padding: 7px 20px;
+.select {
+  padding: 6px 20px;
   outline:0;
   box-shadow:none;
   border:0!important;
   background: #ad92ba;
-
   flex: 1;
-border-radius: 10px;
+  border-radius: 10px;
   min-width:200px;
   color:#10001f;
   cursor:pointer;
   font-size: .9em;
-  font-family: 'Open Sans', sans-serif;
 }

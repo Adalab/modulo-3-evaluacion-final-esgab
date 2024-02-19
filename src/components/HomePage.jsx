@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 
-function HomePage({ handleFilterCharacter, handleClickReset, valueName, valueHouse, data }) {
+function HomePage({ handleFilterCharacter, handleClickReset, valueName, valueHouse, valueGender, data }) {
 
   return (
     <>
@@ -13,6 +13,7 @@ function HomePage({ handleFilterCharacter, handleClickReset, valueName, valueHou
           handleClickReset={handleClickReset}
           valueName={valueName}
           valueHouse={valueHouse}
+          valueGender={valueGender}
         />
         </section>
         <section className="main__characters">
@@ -30,6 +31,7 @@ HomePage.propTypes = {
   handleClickReset: PropTypes.func.isRequired,
   valueName: PropTypes.string.isRequired,
   valueHouse: PropTypes.string.isRequired,
+  valueGender: PropTypes.string.isRequired,
   data: PropTypes.array.isRequired,
 };
 

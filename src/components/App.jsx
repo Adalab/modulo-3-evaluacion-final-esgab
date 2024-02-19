@@ -19,6 +19,7 @@ function App() {
   const [dataFilters, setDataFilters] = useState({
     name: "",
     house: "Gryffindor",
+    gender: ""
   });
 
   useEffect(() => {
@@ -44,14 +45,23 @@ function App() {
     .filter((character) =>
       character.name.toLowerCase().includes(dataFilters.name.toLowerCase())
     )
+
     .filter((character) => {
       if (dataFilters.house === "All") {
         return true;
       } else {
         return character.house === dataFilters.house;
       }
-    });
+    })
 
+    .filter((character) => {
+      if (dataFilters.gender === "") {
+        return true; 
+      } else {
+        return character.gender === dataFilters.gender;
+      }
+    });
+    
   const getInfoCharacter = (characterName, characterAncestry) => {
     const characterFound = data.find(
       (character) =>
@@ -66,6 +76,7 @@ function App() {
     setDataFilters({
       name: "",
       house: "Gryffindor",
+      gender: ""
     });
   };
 
@@ -83,6 +94,7 @@ function App() {
                 handleClickReset={handleClickReset}
                 valueName={dataFilters.name}
                 valueHouse={dataFilters.house}
+                valueGender={dataFilters.gender}
                 data={filteredCharacters}
               />
             }
@@ -100,7 +112,7 @@ function App() {
           <Route
             path="*"
             element={
-              <MessagePage text="Lo que estás buscando no se ha podido encontrar" />
+              <MessagePage text="Lo que estás buscando no se ha podido encontrar." />
             }
           />
         </Routes>

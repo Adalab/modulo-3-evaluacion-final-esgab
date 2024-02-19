@@ -2,7 +2,11 @@ import PropTypes from "prop-types";
 
 function MessagePage(props) {
 
-  return <p>{props.text}</p>;
+  return (
+    <div className="message">
+      <p className="message__text">{props.text}</p>
+    </div>
+  );
 
 }
 

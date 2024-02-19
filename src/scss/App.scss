@@ -5,6 +5,7 @@
 @import 'components/CharacterList';
 @import 'components/CharacterCard';
 @import 'components/CharacterDetail';
+@import 'components/MessagePage';
 @import 'components/Footer';
 
 body {
@@ -17,4 +18,6 @@ body {
 
 .main {
   padding-bottom: 10vh;
+  min-height: 80vh;
 }
+
