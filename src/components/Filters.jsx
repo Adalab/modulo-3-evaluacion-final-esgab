@@ -51,7 +51,7 @@ function Filters({ handleFilterCharacter, handleClickReset, valueName, valueHous
           </option>
         </select>
       </fieldset>
-      <button className="filters__reset" onClick={handleClickReset}>Reset</button>
+      <button className="filters__reset" onClick={handleClickReset}><i className="fa-solid fa-rotate-left"></i></button>
     </form>
   );
 

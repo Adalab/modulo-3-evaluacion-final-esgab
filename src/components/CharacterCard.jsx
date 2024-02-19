@@ -11,7 +11,7 @@ import defaultPhoto from "../images/no-image.jpg";
 
 function CharacterCard({ character }) {
 
-  const { name, house, image, species, ancestry } = character;
+  const { name, house, image, ancestry } = character;
 
   const houseShield = {
     Gryffindor: gryffindor,
@@ -30,7 +30,6 @@ function CharacterCard({ character }) {
         />
         <h3 className="character__name">{name}</h3>
         <p className="character__house">{house}</p>
-        <p className="character__species">{species}</p>
       </article>
     </Link>
   );

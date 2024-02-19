@@ -1,12 +1,20 @@
 @import 'core/reset';
 @import 'components/Loader';
 @import 'components/Header';
+@import 'components/Filters';
 @import 'components/CharacterList';
 @import 'components/CharacterCard';
+@import 'components/CharacterDetail';
+@import 'components/Footer';
 
 body {
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Fondamento", cursive;
   color: white;
   font-size: 19px;
   background-color: #3e2e50;
+  padding: 0 5%;
+}
+
+.main {
+  padding-bottom: 10vh;
 }

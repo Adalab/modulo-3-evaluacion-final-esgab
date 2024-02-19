@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import logo from "../images/Harry_Potter_wordmark.svg";
-
 import Loader from "./Loader";
+import Header from "./Header";
 import HomePage from "./HomePage";
 import MessagePage from "./MessagePage";
 import CharacterDetail from "./CharacterDetail";
+import Footer from "./Footer";
 
 import "../scss/App.scss";
 
@@ -71,9 +71,7 @@ function App() {
 
   return (
     <div className="container">
-      <header className="header">
-        <img className="header__logo" src={logo} alt="Logo Harry Potter" />
-      </header>
+      <Header />
       <main className="main">
         <Routes>
           <Route
@@ -107,9 +105,7 @@ function App() {
           />
         </Routes>
       </main>
-      <footer className="footer">
-        <small className="footer__copy"></small>
-      </footer>
+      <Footer />
     </div>
   );
 }

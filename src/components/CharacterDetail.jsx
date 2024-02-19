@@ -39,34 +39,65 @@ function CharacterDetail({ getInfoCharacter }) {
   return (
     <div className="detail">
       <Link to={"/"}>
-        <button className="detail__return">&#8656; Volver</button>
+        <button className="detail__return">
+          <i className="fa-solid fa-reply"></i> Volver
+        </button>
       </Link>
       <div className="detail__character">
         <article className="detail__article characterinfo">
           <div className="characterinfo__image-container">
             <img
-              className="characterinfo___image"
+              className="characterinfo__image"
               src={image || houseImage[house] || defaultPhoto}
               alt={`Imagen del personaje ${name}`}
             />
           </div>
           <div className="characterinfo__data">
             <h3 className="characterinfo__name">{characterInfo.name}</h3>
-            <p> 
-              <bold>Estatus: </bold>{(alive && gender === "male" ? "Vivo" : "Muerto") || (alive && gender === "female" ? "Viva" : "Muerta")}
-              <ins>{(alive ? "Icono vivo" : "Icono muerto")}</ins>
+            <p className="characterinfo__text">
+              <bold className="bold">Estatus: </bold>
+              {gender === "male" && alive && "Vivo"}
+              {gender === "male" && !alive && "Muerto"}
+              {gender === "female" && alive && "Viva"}
+              {gender === "female" && !alive && "Muerta"}
+              <ins className="icon">
+                {alive ? (
+                  <i className="fa-solid fa-heart-pulse"></i>
+                ) : (
+                  <i className="fa-solid fa-skull"></i>
+                )}
+              </ins>
             </p>
-            <p>
-              <bold>Especie: </bold>{translation[species][gender] || translation[species]} 
-              <ins>{(species === "human" ? "Icono humano" : "Icono otra especie")}</ins>
+            <p className="characterinfo__text">
+              <bold className="bold">Especie: </bold>
+              {translation[species][gender] || translation[species]}
+              <ins className="icon">
+                {species === "human" ? (
+                  <i className="fa-solid fa-user-large"></i>
+                ) : (
+                  <i className="fa-solid fa-user-large-slash"></i>
+                )}
+              </ins>
             </p>
-            <p>
-              <bold>Género: </bold>{translation[gender]} 
-              <ins>{(species === "male" ? "Icono hombre" : "Icono mujer")}</ins>
+            <p className="characterinfo__text">
+              <bold className="bold">Género: </bold>
+              {translation[gender]}
+              <ins className="icon">
+                {gender === "male" ? (
+                  <i className="fa-solid fa-mars"></i>
+                ) : (
+                  <i className="fa-solid fa-venus"></i>
+                )}
+              </ins>
             </p>
-            <p>
-              <bold>Casa:</bold> {house}
+            <p className="characterinfo__text">
+              <bold className="bold">Ancestría: </bold>
+              {ancestry ? translation[ancestry][gender] : "Desconocida"}
+              <ins className="icon">
+              {ancestry ? <i className="fa-solid fa-droplet"></i> : ""}
+              </ins>
             </p>
+            <p className="characterinfo__house">{house}</p>
           </div>
         </article>
       </div>

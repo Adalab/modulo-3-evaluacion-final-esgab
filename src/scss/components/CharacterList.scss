@@ -1,6 +1,7 @@
 .characters__list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  align-items: center;
 
   .character__item {
     user-select:none;
@@ -15,5 +16,12 @@
     overflow: hidden;
     transition: .5s all;
     text-decoration: none !important;
+
+    &:hover{
+      border: 1px solid #ffffff44;
+      box-shadow: 0 7px 50px 10px #000000aa;
+      transform: scale(1.015);
+      filter: brightness(1.3);
+    }
   }
 }
