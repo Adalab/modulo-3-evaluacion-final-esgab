@@ -5,6 +5,8 @@ import FilterHouse from "./FilterHouse";
 import FilterGender from "./FilterGender";
 import FiltersReset from "./FiltersReset";
 
+import "../scss/Filters.scss";
+
 function Filters({ handleFilterCharacter, handleClickReset, valueName, valueHouse, valueGender }) {
 
   const handleSubmit = (event) => {

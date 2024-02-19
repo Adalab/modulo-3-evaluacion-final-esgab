@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import "../scss/MessagePage.scss";
+
 function MessagePage(props) {
 
   return (

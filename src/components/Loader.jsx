@@ -1,3 +1,5 @@
+import "../scss/Loader.scss";
+
 function Loader() {
 
   return (

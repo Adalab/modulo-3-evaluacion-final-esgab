@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import CharacterCard from "./CharacterCard";
 import MessagePage from "./MessagePage";
 
+import "../scss/CharacterList.scss";
+
 function CharacterList({ data, valueName }) {
 
   let html;

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 import MessagePage from "./MessagePage";
 
+import "../scss/CharacterDetail.scss";
+
 import translation from "../services/translations";
 
 import gryffindor from "../images/house-gryffindor.jpg";

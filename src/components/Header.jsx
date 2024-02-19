@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import "../scss/Header.scss";
+
 import logo from "../images/Harry_Potter_wordmark.svg";
 
 function Header() {

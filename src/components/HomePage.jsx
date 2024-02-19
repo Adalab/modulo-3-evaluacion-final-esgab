@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 
+
 function HomePage({ handleFilterCharacter, handleClickReset, valueName, valueHouse, valueGender, data }) {
 
   return (

@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
 
+import "../scss/CharacterCard.scss";
+
 import gryffindor from "../images/house-gryffindor.jpg";
 import hufflepuff from "../images/house-hufflepuff.jpg";
 import ravenclaw from "../images/house-ravenclaw.jpg"
