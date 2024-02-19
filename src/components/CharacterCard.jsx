@@ -8,7 +8,6 @@ import ravenclaw from "../images/house-ravenclaw.jpg"
 import slytherin from "../images/house-slytherin.jpg";
 import defaultPhoto from "../images/no-image.jpg";
 
-
 function CharacterCard({ character }) {
 
   const { name, house, image, ancestry } = character;

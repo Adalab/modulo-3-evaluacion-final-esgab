@@ -1,13 +1,14 @@
 .detail {
-  width: 700px;
+  max-width: 700px;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 
   &__return {
-    font-family: "Fondamento", cursive;
-    font-size: 25px;
+    font-family: $font;
+    font-size: 27px;
     background: none;
     padding: 0;
     border: none;
@@ -28,6 +29,9 @@
     overflow: hidden;
     transition: .5s all;
     text-decoration: none !important;
+    @media (max-width: 768px) {
+      height: auto;
+    }
 
     .characterinfo {
       height: 100%;
@@ -36,10 +40,16 @@
       padding: 1rem;
       justify-content: space-between;
       font-size: 23px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
 
       &__image-container {
         width: 50%;
         overflow: hidden;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
       }
 
       &__image {
@@ -55,6 +65,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
       }
 
       &__name {
@@ -67,8 +80,9 @@
       }
 
       .bold {
-        color: #a89ec9;
+        color: $color2;
       }
+
       &__house {
         margin: 1rem 0;
         font-size: 25px;
@@ -76,15 +90,9 @@
 
       .icon {
         margin-left: .5rem;
-        color: #a89ec9;
+        color: $color2;
       }
     }
-
-
-
-
-
-
 
     &__info {
       width: 50%;
@@ -92,10 +100,5 @@
       flex-direction: column;
       justify-content: center;
     }
-
-    h3, p {
-      text-decoration: none;
-    }
   }
-
 }

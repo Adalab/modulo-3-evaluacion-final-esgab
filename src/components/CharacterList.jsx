@@ -30,6 +30,7 @@ function CharacterList({ data, valueName }) {
 
 CharacterList.propTypes = {
   data: PropTypes.array.isRequired,
+  valueName: PropTypes.string.isRequired,
 };
 
 export default CharacterList;

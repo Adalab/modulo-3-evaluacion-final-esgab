@@ -1,4 +1,5 @@
 @import 'core/reset';
+@import 'core/variables';
 @import 'components/Loader';
 @import 'components/Header';
 @import 'components/Filters';
@@ -8,11 +9,16 @@
 @import 'components/MessagePage';
 @import 'components/Footer';
 
+
+:root {
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
-  font-family: "Fondamento", cursive;
+  font-family: $font;
   color: white;
   font-size: 19px;
-  background-color: #3e2e50;
+  background-color: $color-bg;
   padding: 0 5%;
 }
 

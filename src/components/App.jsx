@@ -25,6 +25,7 @@ function App() {
   useEffect(() => {
     setIsLoading(true);
     fetchCharacters().then((responseData) => {
+      // Organize data alphabetically
       const sortedData = responseData.sort((a, b) =>
         a.name.localeCompare(b.name)
       );
@@ -86,7 +87,6 @@ function App() {
       <main className="main">
         <Routes>
           <Route
-            exact
             path="/"
             element={
               <HomePage

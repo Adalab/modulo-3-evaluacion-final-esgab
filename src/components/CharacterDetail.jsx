@@ -23,6 +23,8 @@ function CharacterDetail({ getInfoCharacter }) {
     ancestry
   );
 
+  console.log(characterInfo)
+
   if (!characterInfo) {
     return <MessagePage text="El personaje que buscas no existe." />;
   }
@@ -55,7 +57,7 @@ function CharacterDetail({ getInfoCharacter }) {
           <div className="characterinfo__data">
             <h3 className="characterinfo__name">{characterInfo.name}</h3>
             <p className="characterinfo__text">
-              <bold className="bold">Estatus: </bold>
+              <span className="bold">Estatus: </span>
               {gender === "male" && alive && "Vivo"}
               {gender === "male" && !alive && "Muerto"}
               {gender === "female" && alive && "Viva"}
@@ -69,7 +71,7 @@ function CharacterDetail({ getInfoCharacter }) {
               </ins>
             </p>
             <p className="characterinfo__text">
-              <bold className="bold">Especie: </bold>
+              <span className="bold">Especie: </span>
               {translation[species][gender] || translation[species]}
               <ins className="icon">
                 {species === "human" ? (
@@ -80,7 +82,7 @@ function CharacterDetail({ getInfoCharacter }) {
               </ins>
             </p>
             <p className="characterinfo__text">
-              <bold className="bold">Género: </bold>
+              <span className="bold">Género: </span>
               {translation[gender]}
               <ins className="icon">
                 {gender === "male" ? (
@@ -91,8 +93,8 @@ function CharacterDetail({ getInfoCharacter }) {
               </ins>
             </p>
             <p className="characterinfo__text">
-              <bold className="bold">Ancestría: </bold>
-              {ancestry ? translation[ancestry][gender] : "Desconocida"}
+              <span className="bold">Ancestría: </span>
+              {ancestry ? translation[ancestry][gender] || translation[ancestry] : "Desconocida"}
               <ins className="icon">
               {ancestry ? <i className="fa-solid fa-droplet"></i> : ""}
               </ins>
